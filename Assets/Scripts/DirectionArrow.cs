@@ -25,11 +25,11 @@ public class DirectionArrow : MonoBehaviour
             Debug.Log(transform.rotation.y);
             if (transform.rotation.y > 0.4f)
             {
-                bounce = true;
+                bounce = false;
             }
             else if (transform.rotation.y < -0.4f)
             {
-                bounce = false;
+                bounce = true;
             }
             if (bounce)
             {

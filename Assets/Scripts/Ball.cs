@@ -91,14 +91,14 @@ public class Ball : MonoBehaviour
             {
                 bouncetime = true;
             }
-            Debug.Log(textcolor);
             strength.color = textcolor;
             
             strength.text = ""+(short)valuestrength;
         }
         if (hitspacefinal)
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength, 0, DirectionArrow.transform.rotation.y*10));
+
+            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength, 0, 0));
             DirectionArrow.SetActive(false);
         }
     }

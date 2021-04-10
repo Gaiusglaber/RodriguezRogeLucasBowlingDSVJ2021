@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
     public float cameraX = 5.0f;
     public float cameramaxY = 2;
 
-    void Update()
+    void LateUpdate()
     {
         cameramaxY = this.transform.position.y;
         if (transform.position.x < 11)
