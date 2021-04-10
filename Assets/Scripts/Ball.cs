@@ -6,6 +6,8 @@ public class Ball : MonoBehaviour
 {
     public float speed = 0.5f;
     public GameObject DirectionArrow;
+    public TMPro.TMP_Text strength;
+    public GameObject ui;
     public bool hitspace = false;
     public bool hitspacetwice = false;
     public bool hitspacefinal = false;
@@ -57,9 +59,13 @@ public class Ball : MonoBehaviour
         {
             DirectionArrow.SetActive(true);
         }
+        if (hitspacetwice)
+        {
+            ui.SetActive(true);
+        }
         if (hitspacefinal)
         {
-            Debug.Log("Presione espacio 3 veces");
+
         }
     }
 }

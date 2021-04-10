@@ -22,21 +22,22 @@ public class DirectionArrow : MonoBehaviour
         }
         if (!presspace)
         {
-            if (bounce)
-            {
-                this.transform.Rotate(0, speed * Time.deltaTime, 0, Space.World);
-            }
-            else
-            {
-                this.transform.Rotate(0, -(speed * Time.deltaTime), 0, Space.World);
-            }
-            if (this.transform.rotation.y > 0.4f)
+            Debug.Log(transform.rotation.y);
+            if (transform.rotation.y > 0.4f)
             {
                 bounce = true;
             }
-            else if (this.transform.rotation.y < -0.4f)
+            else if (transform.rotation.y < -0.4f)
             {
                 bounce = false;
+            }
+            if (bounce)
+            {
+                transform.Rotate(0, speed * Time.deltaTime, 0, Space.World);
+            }
+            else
+            {
+                transform.Rotate(0, -(speed * Time.deltaTime), 0, Space.World);
             }
         }
     }
