@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float speed = 0.5f;
-    public GameObject DirectionArrow;
+    public GameObject directionArrow;
     public TMPro.TMP_Text strength;
     public GameObject ui;
     public bool hitspace = false;
@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
     float valuestrength=0;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class Ball : MonoBehaviour
         }
         if (hitspace&& !hitspacefinal)
         {
-            DirectionArrow.SetActive(true);
+            directionArrow.SetActive(true);
         }
         if (hitspacetwice&&!hitspacefinal)
         {
@@ -95,11 +95,11 @@ public class Ball : MonoBehaviour
             
             strength.text = ""+(short)valuestrength;
         }
+        Debug.Log(directionArrow.transform.rotation.y);
         if (hitspacefinal)
         {
-
-            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength, 0, 0));
-            DirectionArrow.SetActive(false);
+            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength/100, 0, (directionArrow.transform.rotation.y)*-1),ForceMode.Impulse);
+            directionArrow.SetActive(false);
         }
     }
 }

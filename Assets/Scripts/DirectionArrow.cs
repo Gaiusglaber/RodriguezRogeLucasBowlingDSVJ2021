@@ -22,7 +22,6 @@ public class DirectionArrow : MonoBehaviour
         }
         if (!presspace)
         {
-            Debug.Log(transform.rotation.y);
             if (transform.rotation.y > 0.4f)
             {
                 bounce = false;
