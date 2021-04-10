@@ -58,7 +58,7 @@ public class Ball : MonoBehaviour
         {
             hitspace = true;
         }
-        if (hitspace)
+        if (hitspace&& !hitspacefinal)
         {
             DirectionArrow.SetActive(true);
         }
@@ -98,7 +98,8 @@ public class Ball : MonoBehaviour
         }
         if (hitspacefinal)
         {
-
+            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength, 0, DirectionArrow.transform.rotation.y*10));
+            DirectionArrow.SetActive(false);
         }
     }
 }
