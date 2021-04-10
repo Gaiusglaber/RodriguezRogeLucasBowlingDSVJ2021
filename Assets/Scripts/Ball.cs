@@ -13,6 +13,9 @@ public class Ball : MonoBehaviour
     public bool hitspacefinal = false;
     private bool hitcornerright = false;
     private bool hitcornerleft = false;
+    private bool bouncetime = false;
+    private Color textcolor = new Color(0, 1, 0);
+    float valuestrength=0;
     void Start()
     {
         
@@ -59,9 +62,39 @@ public class Ball : MonoBehaviour
         {
             DirectionArrow.SetActive(true);
         }
-        if (hitspacetwice)
+        if (hitspacetwice&&!hitspacefinal)
         {
             ui.SetActive(true);
+
+            if (bouncetime)
+            {
+                if (textcolor.r < 1)
+                    textcolor.r += 0.01f;
+                else if (textcolor.g > 0)
+                    textcolor.g -= 0.01f;
+
+                valuestrength += 0.5f;
+            }
+            else
+            {
+                if (textcolor.g < 1)
+                    textcolor.g += 0.01f;
+                else if (textcolor.r > 0)
+                    textcolor.r -= 0.01f;
+
+                valuestrength -= 0.5f;
+            }
+            if (valuestrength>100)
+            {
+                bouncetime = false;
+            }else if (valuestrength < 0)
+            {
+                bouncetime = true;
+            }
+            Debug.Log(textcolor);
+            strength.color = textcolor;
+            
+            strength.text = ""+(short)valuestrength;
         }
         if (hitspacefinal)
         {
