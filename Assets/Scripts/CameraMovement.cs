@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            if (cameramaxY < 3.5f)
+            if (cameramaxY < 4.5f)
             {
                 cameramaxY += 0.006f;
             }

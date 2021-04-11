@@ -11,8 +11,7 @@ public class Ball : MonoBehaviour
     public bool hitspace = false;
     public bool hitspacetwice = false;
     public bool hitspacefinal = false;
-    private bool hitcornerright = false;
-    private bool hitcornerleft = false;
+    private bool bounce = false;
     private bool bouncetime = false;
     private Color textcolor = new Color(0, 1, 0);
     float valuestrength=0;
@@ -26,25 +25,25 @@ public class Ball : MonoBehaviour
     {
         if (!hitspace)
         {
-            if (transform.position.z > 0.6f && !hitcornerleft)
+            if (transform.position.z > 0.6f)
             {
-                hitcornerleft = true;
+                bounce = true;
             }
-            if (transform.position.z < -0.6f && !hitcornerright)
+            else if (transform.position.z < -0.6f)
             {
-                hitcornerright = true;
+                bounce = false;
             }
-            if (hitcornerright)
+            if (bounce)
             {
-                speed *= -1;
-                hitcornerright = false;
+                transform.position = new Vector3(this.transform.position.x, this.transform.position.y, (this.transform.position.z - speed * Time.deltaTime));
             }
-            if (hitcornerleft)
+            else
             {
-                speed *= -1;
-                hitcornerleft = false;
+                transform.position = new Vector3(this.transform.position.x, this.transform.position.y, (this.transform.position.z + speed * Time.deltaTime));
             }
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, (this.transform.position.z + speed * Time.deltaTime));
+
+            
+            
         }
         if (hitspacetwice && (Input.GetKeyUp(KeyCode.Space)))
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DirectionArrow : MonoBehaviour
 {
+    public Material test;
     public float speed;
     public bool bounce = false;
     private bool presspace = false;
