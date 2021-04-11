@@ -94,7 +94,6 @@ public class Ball : MonoBehaviour
             
             strength.text = ""+(short)valuestrength;
         }
-        Debug.Log(directionArrow.transform.rotation.y);
         if (hitspacefinal)
         {
             GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength/100, 0, (directionArrow.transform.rotation.y/2)*-1),ForceMode.Impulse);

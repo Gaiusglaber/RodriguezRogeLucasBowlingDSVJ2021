@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookDirectionBall : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public Ball ball;
-    private 
+    public CameraMovement cameracomp;
+    public Instantiator instance;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
