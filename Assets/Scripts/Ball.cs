@@ -98,7 +98,7 @@ public class Ball : MonoBehaviour
         Debug.Log(directionArrow.transform.rotation.y);
         if (hitspacefinal)
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength/100, 0, (directionArrow.transform.rotation.y)*-1),ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(new Vector3(valuestrength/100, 0, (directionArrow.transform.rotation.y/2)*-1),ForceMode.Impulse);
             directionArrow.SetActive(false);
         }
     }
