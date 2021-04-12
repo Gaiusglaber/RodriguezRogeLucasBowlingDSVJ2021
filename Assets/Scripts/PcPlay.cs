@@ -8,7 +8,7 @@ public class PcPlay : MonoBehaviour
 {
     private void Start()
     {
-        XRGeneralSettings.Instance.Manager.InitializeLoader();
+
     }
     public void PlayPcGame() 
     {

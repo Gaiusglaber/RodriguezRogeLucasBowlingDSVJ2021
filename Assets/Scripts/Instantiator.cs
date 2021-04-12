@@ -69,7 +69,7 @@ public class Instantiator : MonoBehaviour
             }
         }
         pinesup = cantpines - pinesdown;
-        if (cameracomp.resets)
+        if (cameracomp.resets&&score.it<28)
         {
                 cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
                 ball.transform.position = new Vector3(3.75f, 0.25f, 0);

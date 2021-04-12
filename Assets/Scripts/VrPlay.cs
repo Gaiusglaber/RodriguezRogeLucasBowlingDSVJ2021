@@ -9,7 +9,7 @@ public class VrPlay : MonoBehaviour
     
     private void Start()
     {
-        XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+
     }
     public void PlayGameVr()
     {

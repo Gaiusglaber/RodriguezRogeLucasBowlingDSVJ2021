@@ -109,7 +109,10 @@ public class ScoreManager : MonoBehaviour
                 numberthrow = true;
                 it++;
             }
-            cameracomp.instantiate();
+            if (it < 29)
+            {
+                cameracomp.instantiate();
+            }
         }
     }
     void Start()
