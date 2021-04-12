@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DirectionArrow : MonoBehaviour
 {
+    public Ball ball;
     public Material test;
     public float speed;
     public bool bounce = false;
-    private bool presspace = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,7 @@ public class DirectionArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            presspace = true;
-        }
-        if (!presspace)
+        if (ball.hitspace&&!ball.hitspacetwice)
         {
             if (transform.rotation.y > 0.4f)
             {

@@ -7,10 +7,13 @@ public class Instantiator : MonoBehaviour
 
     public TMPro.TMP_Text pinetext01;
     public TMPro.TMP_Text pinetext02;
-    private int cantpines=10;
-    private int pinesdown;
+    public int cantpines=10;
+    public int pinesdown;
+    public int pinesup;
     public GameObject pinePrefab;
-    public List<GameObject> generatedPines=new List<GameObject>(); 
+    public List<GameObject> generatedPines=new List<GameObject>();
+    public CameraMovement cameracomp;
+    public Ball ball;
     void Start()
     {
        Vector2[] pinePositions = new Vector2[10]{
@@ -45,20 +48,27 @@ public class Instantiator : MonoBehaviour
         foreach (GameObject pine in generatedPines)
         {
             //Debug.Log(pine.transform.rotation);
-            if (Mathf.Abs(pine.transform.rotation.x)> Mathf.Abs(0.2f) || Mathf.Abs(pine.transform.rotation.z)> Mathf.Abs(0.5f)) 
+            if (Mathf.Abs(pine.transform.rotation.x)> 0.2f || Mathf.Abs(pine.transform.rotation.z)> 0.5f) 
             {
                 pinesdown++;
             }
         }
-        if (cantpines - pinesdown == 0)
+        pinesup = cantpines - pinesdown;
+        if (pinesup == 0)
         {
             pinetext02.text = "STRIKE!";
             pinetext01.text = " ";
         }
         else
         {
-            pinetext01.text = "" + (cantpines - pinesdown);
+            pinetext01.text = "" + (pinesup);
         }
-        
+        if (cameracomp.resets)
+        {
+            cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
+            ball.transform.position = new Vector3(3.75f, 0.25f,0);
+            ball.instantiate();
+            cameracomp.instantiate();
+        }
     }
 }

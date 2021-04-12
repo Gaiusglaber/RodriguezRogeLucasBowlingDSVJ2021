@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public CameraMovement cameracomp;
     public Instantiator instance;
+    public List<GameObject> score;
     void Start()
     {
         
@@ -14,6 +15,9 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (cameracomp.reseteable)
+        {
+            
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+
     public float speed = 0.5f;
     public GameObject directionArrow;
     public TMPro.TMP_Text strength;
@@ -11,15 +12,25 @@ public class Ball : MonoBehaviour
     public bool hitspace = false;
     public bool hitspacetwice = false;
     public bool hitspacefinal = false;
-    private bool bounce = false;
-    private bool bouncetime = false;
-    private Color textcolor = new Color(0, 1, 0);
-    float valuestrength=0;
+    public bool bounce = false;
+    public bool bouncetime = false;
+    public Color textcolor = new Color(0, 1, 0);
+    public float valuestrength=0;
     void Start()
     {
 
     }
-
+    public void instantiate()
+    {
+        hitspace = false;
+        hitspacetwice = false;
+        hitspacefinal = false;
+        bounce = false;
+        bouncetime = false;
+        textcolor = new Color(0, 1, 0);
+        valuestrength = 0;
+        ui.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
