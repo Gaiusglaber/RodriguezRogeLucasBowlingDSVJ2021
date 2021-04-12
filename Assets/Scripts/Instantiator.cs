@@ -14,9 +14,10 @@ public class Instantiator : MonoBehaviour
     public List<GameObject> generatedPines=new List<GameObject>();
     public CameraMovement cameracomp;
     public Ball ball;
-    void Start()
+
+    public void init() 
     {
-       Vector2[] pinePositions = new Vector2[10]{
+        Vector2[] pinePositions = new Vector2[10]{
        new Vector2 ( 0, 0 ),
 
        new Vector2 ( 0.3f, 0.3f ),
@@ -30,15 +31,28 @@ public class Instantiator : MonoBehaviour
        new Vector2 ( 0.9f, -0.3f ),
        new Vector2 ( 0.9f, 0.3f ),
        new Vector2 ( 0.9f, 0.6f ) };
-       for (short i = 0; i < 10; i++) {
-           GameObject instantiator = Instantiate(pinePrefab, new Vector3(this.transform.position.x+pinePositions[i].x, 0, this.transform.position.z+pinePositions[i].y), Quaternion.identity).gameObject;
-           instantiator.AddComponent<MeshCollider>();
-           instantiator.AddComponent<Rigidbody>();
-           instantiator.GetComponent<Rigidbody>().mass = 1.5f;
-           instantiator.GetComponent<MeshCollider>().sharedMesh = instantiator.GetComponentInChildren<MeshFilter>().mesh;
-           instantiator.GetComponent<MeshCollider>().convex = true;
-           generatedPines.Add(instantiator);
-       }
+        for (short i = 0; i < 10; i++)
+        {
+            GameObject instantiator = Instantiate(pinePrefab, new Vector3(this.transform.position.x + pinePositions[i].x, 0, this.transform.position.z + pinePositions[i].y), Quaternion.identity).gameObject;
+            instantiator.AddComponent<MeshCollider>();
+            instantiator.AddComponent<Rigidbody>();
+            instantiator.GetComponent<Rigidbody>().mass = 1.5f;
+            instantiator.GetComponent<MeshCollider>().sharedMesh = instantiator.GetComponentInChildren<MeshFilter>().mesh;
+            instantiator.GetComponent<MeshCollider>().convex = true;
+            generatedPines.Add(instantiator);
+        }
+    }
+    public void deinit()
+    {
+        foreach (GameObject pine in generatedPines)
+        {
+            Destroy(pine);
+        }
+        generatedPines.Clear();
+    }
+    void Start()
+    {
+        init();
     }
 
     // Update is called once per frame
@@ -54,15 +68,6 @@ public class Instantiator : MonoBehaviour
             }
         }
         pinesup = cantpines - pinesdown;
-        if (pinesup == 0)
-        {
-            pinetext02.text = "STRIKE!";
-            pinetext01.text = " ";
-        }
-        else
-        {
-            pinetext01.text = "" + (pinesup);
-        }
         if (cameracomp.resets)
         {
             cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
