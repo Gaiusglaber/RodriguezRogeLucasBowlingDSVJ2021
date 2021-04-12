@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     private int it=0;
     private bool numberthrow = true;
     public List<int> score;
-
     void anotateScore()
     {
         if (instance.pinesup == 0&&numberthrow)

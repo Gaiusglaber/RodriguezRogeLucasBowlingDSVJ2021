@@ -15,5 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bowling stage VR.unity
     guid: 0955749379e59f64b933b6f12a085a15
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2d1b6533184167a45b5a328168a421bb,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a29fdb63647a4974c81d4c12103e60b8,
       type: 2}

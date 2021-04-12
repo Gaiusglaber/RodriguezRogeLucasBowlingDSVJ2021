@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0956b3dba4607f7478db369cc3f489e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pinetext01: {instanceID: 0}
+  - pinetext02: {instanceID: 0}
+  - pinePrefab: {fileID: 139516, guid: 4246925f0393c430189bb4ceba36dc8a, type: 3}
+  - ball: {fileID: 8656109272458821202, guid: fea9393f658e6d9498f338b4fdfba8ea, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
