@@ -7,6 +7,7 @@ public class Instantiator : MonoBehaviour
 
     public TMPro.TMP_Text pinetext01;
     public TMPro.TMP_Text pinetext02;
+    public ScoreManager score;
     public int cantpines=10;
     public int pinesdown;
     public int pinesup;
@@ -14,6 +15,7 @@ public class Instantiator : MonoBehaviour
     public List<GameObject> generatedPines=new List<GameObject>();
     public CameraMovement cameracomp;
     public Ball ball;
+    public bool gamended = false;
 
     public void init() 
     {
@@ -61,7 +63,6 @@ public class Instantiator : MonoBehaviour
         pinesdown = 0;
         foreach (GameObject pine in generatedPines)
         {
-            //Debug.Log(pine.transform.rotation);
             if (Mathf.Abs(pine.transform.rotation.x)> 0.2f || Mathf.Abs(pine.transform.rotation.z)> 0.5f) 
             {
                 pinesdown++;
@@ -70,9 +71,9 @@ public class Instantiator : MonoBehaviour
         pinesup = cantpines - pinesdown;
         if (cameracomp.resets)
         {
-            cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
-            ball.transform.position = new Vector3(3.75f, 0.25f,0);
-            ball.instantiate();
+                cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
+                ball.transform.position = new Vector3(3.75f, 0.25f, 0);
+                ball.instantiate();
         }
     }
 }

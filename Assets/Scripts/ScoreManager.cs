@@ -5,11 +5,14 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public CameraMovement cameracomp;
+    public GameObject uigameover;
+    public bool isfinished = false;
     public Instantiator instance;
     public List<TMPro.TMP_Text> scores;
-    private int it=0;
+    public int it=0;
     private bool numberthrow = true;
     public List<int> score;
+    public int totalscore = 0;
     void anotateScore()
     {
         if (instance.pinesup == 0&&numberthrow)
@@ -45,9 +48,26 @@ public class ScoreManager : MonoBehaviour
             {
                 scores[it].text = "/";
             }
+            else if (numberthrow)
+            {
+                scores[it].text = score[it].ToString();
+            }
             else
             {
                 scores[it].text = score[it].ToString();
+                if (scores[it-1].text == "X")
+                {
+                    score[it + 1] = 30;
+                }
+                else if (scores[it].text == "/")
+                {
+                    score[it + 1] = 20;
+                }
+                else
+                {
+                    score[it + 1]= (score[it - 1] + score[it]);
+                }
+                scores[it + 1].text = score[it + 1].ToString();
             }
         }
     }
@@ -99,7 +119,29 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anotateScore();
-        updateIt();
+        if (!isfinished) {
+            if (it < 30)
+            {
+                anotateScore();
+                updateIt();
+            }
+            else
+            {
+                for (short i = 0; i < 31; i++)
+                {
+                    if (i % 3 == 2||i==2)
+                    {
+                        totalscore += score[i];
+                    }
+                }
+                isfinished = true;
+                score[30] = totalscore;
+                scores[30].text = "" + score[30];
+            }
+        }
+        else
+        {
+            uigameover.SetActive(true);
+        }
     }
 }
