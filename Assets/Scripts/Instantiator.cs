@@ -73,7 +73,6 @@ public class Instantiator : MonoBehaviour
             cameracomp.transform.position = new Vector3(3.0111f, 0.847f, 0.05f);
             ball.transform.position = new Vector3(3.75f, 0.25f,0);
             ball.instantiate();
-            cameracomp.instantiate();
         }
     }
 }

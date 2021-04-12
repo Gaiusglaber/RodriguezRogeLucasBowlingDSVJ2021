@@ -301,7 +301,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -840,6 +840,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8656109272458821202, guid: fea9393f658e6d9498f338b4fdfba8ea,
+        type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 937410697}
+    - target: {fileID: 8656109272458821202, guid: fea9393f658e6d9498f338b4fdfba8ea,
+        type: 3}
+      propertyPath: strength
+      value: 
+      objectReference: {fileID: 937410699}
+    - target: {fileID: 8656109272458821202, guid: fea9393f658e6d9498f338b4fdfba8ea,
+        type: 3}
+      propertyPath: directionArrow
+      value: 
+      objectReference: {fileID: 991509566}
     - target: {fileID: 8985112659694848805, guid: fea9393f658e6d9498f338b4fdfba8ea,
         type: 3}
       propertyPath: m_Radius
@@ -1288,7 +1303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 13.861001, y: 90.00001, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1327,7 +1342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1555774870}
-  test: {fileID: 0}
   speed: 40
   bounce: 0
 --- !u!114 &1064528919 stripped
@@ -2121,7 +2135,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2160,7 +2174,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1555774870 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -3381143348462989479, guid: fea9393f658e6d9498f338b4fdfba8ea,
+  m_CorrespondingSourceObject: {fileID: 8656109272458821202, guid: fea9393f658e6d9498f338b4fdfba8ea,
     type: 3}
   m_PrefabInstance: {fileID: 734227940}
   m_PrefabAsset: {fileID: 0}
@@ -3005,6 +3019,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 720511790412768326, guid: d2de245aea4db2846876e1d844a9b73f,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 1568888500891751041, guid: d2de245aea4db2846876e1d844a9b73f,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 1584388494770204963, guid: d2de245aea4db2846876e1d844a9b73f,
         type: 3}
       propertyPath: m_LocalPosition.z

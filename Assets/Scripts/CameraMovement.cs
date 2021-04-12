@@ -10,6 +10,10 @@ public class CameraMovement : MonoBehaviour
     public float cameramaxY = 2;
     public bool reseteable = false;
     public bool resets = false;
+    void Start()
+    {
+          
+    }
     public void instantiate()
     {
         cameraHeight = 0.5f;
@@ -41,6 +45,7 @@ public class CameraMovement : MonoBehaviour
 
             if (reseteable && Input.GetKeyUp(KeyCode.R))
             {
+                Debug.Log("resets camera");
                 resets = true;
             }
             transform.position = new Vector3(this.transform.position.x, cameramaxY, this.transform.position.z);

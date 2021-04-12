@@ -5,7 +5,6 @@ using UnityEngine;
 public class DirectionArrow : MonoBehaviour
 {
     public Ball ball;
-    public Material test;
     public float speed;
     public bool bounce = false;
     // Start is called before the first frame update

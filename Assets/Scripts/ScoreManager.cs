@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         {
             if (!numberthrow)
             {
-                score[it] = score[it - 1] - instance.pinesdown;
+                score[it] = instance.pinesdown- score[it - 1];
             }
             else
             {
@@ -90,6 +90,7 @@ public class ScoreManager : MonoBehaviour
                 numberthrow = true;
                 it++;
             }
+            cameracomp.instantiate();
         }
     }
     void Start()
