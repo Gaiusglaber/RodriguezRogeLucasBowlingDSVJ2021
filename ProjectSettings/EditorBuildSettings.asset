@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Bowling stage PC.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Bowling stage VR.unity
-    guid: 0955749379e59f64b933b6f12a085a15
+    path: Assets/Scenes/PistolScene.unity
+    guid: 8095fa6c86ad7f341bb0ac0144bff7ef
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2d1b6533184167a45b5a328168a421bb,
       type: 2}

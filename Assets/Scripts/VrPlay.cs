@@ -11,7 +11,7 @@ public class VrPlay : MonoBehaviour
     {
 
     }
-    public void PlayGameVr()
+    public void PlayGameFps()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
